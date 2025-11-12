@@ -1,0 +1,74 @@
+.navbar{
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: aliceblue;
+    width: 100%;
+    height: 67px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  background-color: #f3f9ff;
+  box-sizing: border-box;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+  color: black;
+  flex: 1; /* take up available space */
+}
+
+.left-nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* logo doesn't shrink */
+}
+
+.left-nav-logo img{
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.left-nav-object {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.left-nav-object a {
+  text-decoration: none;
+  padding: 2px 4px;
+}
+
+.rightContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+  color: black;
+  flex: 1; /* take up available space */
+  flex-shrink: 0;
+}
+
+.right-nav-social{
+  display: flex;
+  gap: 16px
+}
+
+.right-nav-profile img{
+  width: 2.5rem;
+  height: 2.5rem;
+}
