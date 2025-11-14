@@ -1,13 +1,19 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from api.database import get_db
-from api.models.supporters import Supporter
-from api.schemas.supporter import SupporterOut
+from database import get_db
+from models.supporters import Supporter
+from schemas.supporter import SupporterOut
+from typing import List
 
 
 router = APIRouter()
 
 
-@router.get("/", response_model=list[SupporterOut])
-def get_supporters(db: Session = Depends(get_db)):
-    return db.query(Supporter).all()
+
+@router.get("/", response_model=List[SupporterOut])
+def get_supporters():
+    db: Session = next(get_db())
+    supporters = db.query(Supporter).all()
+    if not supporters:
+        raise HTTPException(status_code=404, detail="No supporters found")
+    return supporters

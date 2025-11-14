@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from api.database import get_db
-from api.models.donations import Donation
-from api.models.supporters import Supporter
-from api.schemas.donation import DonationCreate
+from database import get_db
+from models.donations import Donation
+from models.supporters import Supporter
+from schemas.donation import DonationCreate
 
 
 router = APIRouter()

@@ -18,11 +18,11 @@ function Navbar() {
           </a>
 
           <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
-            <li><a href="about-us">About Us</a></li>
-            <li><a href="survey">Survey</a></li>
-            <li><a href="self-motivation">Self Motivation</a></li>
-            <li><a href="supporters">Supporters</a></li>
-            <li><a href="donations">Donations</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/survey">Survey</a></li>
+            <li><a href="/self-motivation">Self Motivation</a></li>
+            <li><a href="/supporters">Supporters</a></li>
+            <li><a href="/donations">Donations</a></li>
           </ul>
         </div>
 

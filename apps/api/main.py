@@ -1,11 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.routes import supporters_route, donations_route, survey_questions_route
-from api.database import Base, engine
-from api.models import supporters, donations, survey_questions
+from routes import supporters_route, donations_route, survey_questions_route
+from database import Base, engine
+from models import supporters, donations, survey_questions
+from seeders import supporters_seeder
 
 Base.metadata.create_all(bind=engine)
 
+supporters_seeder()
 
 app = FastAPI()
 

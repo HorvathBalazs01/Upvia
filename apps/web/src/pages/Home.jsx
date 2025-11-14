@@ -10,8 +10,8 @@ function Home(){
                     <p>Build self-motivation and make decisions according to your own rules. Take our quiz to get personalized recommendations.</p>
                 </div>
                 <div className="hero-buttons">
-                    <a href="self-motivation"><button>Start Your Journey</button></a>
-                    <a href="about-us"><button>Learn More</button></a>
+                    <a href="/self-motivation"><button>Start Your Journey</button></a>
+                    <a href="/about-us"><button>Learn More</button></a>
                 </div>
             </div>
 
@@ -62,7 +62,7 @@ function Home(){
                         <h2>Ready to Start Your Journey?</h2>
                         <p>Take our comprehensive quiz to receive personalized recommendations for building self-motivation and autonomy.</p>
                         <br />
-                        <a href="survey"><button>Take the Quiz Now</button></a>
+                        <a href="/survey"><button>Take the Quiz Now</button></a>
                     </div>
                 </div>  
             </div>

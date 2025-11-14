@@ -20,11 +20,11 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='about-us' element={<AboutUs/>}/>
-          <Route path='self-motivation' element={<SelfMotivation/>}/>
-          <Route path='survey' element={<Survey/>}/>
-          <Route path='supporters' element={<Supporters/>}/>
-          <Route path='donations' element={<Donations/>}/>
+          <Route path='/about-us' element={<AboutUs/>}/>
+          <Route path='/self-motivation' element={<SelfMotivation/>}/>
+          <Route path='/survey' element={<Survey/>}/>
+          <Route path='/supporters' element={<Supporters/>}/>
+          <Route path='/donations' element={<Donations/>}/>
         </Routes>
       </main>
       <Footer/>

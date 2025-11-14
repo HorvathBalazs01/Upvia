@@ -1,28 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/pageStyles/supporters.css';
 
 const Supporters = () => {
-  const goldSupporters = [
-    { id: 'FIG', name: 'Foundation for Growth', level: 'Gold Supporter' },
-    { id: 'MLI', name: 'Mindful Living Institute', level: 'Gold Supporter' },
-    { id: 'AF', name: 'Acme Foundation', level: 'Gold Supporter' }
-  ];
+  const [supporters, setSupporters] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const silverSupporters = [
-    { id: 'PDC', name: 'Personal Development Co', level: 'Silver Supporter' },
-    { id: 'WP', name: 'Wellness Partners', level: 'Silver Supporter' },
-    { id: 'FLF', name: 'Future Leaders Fund', level: 'Silver Supporter' },
-    { id: 'EN', name: 'Empowerment Network', level: 'Silver Supporter' }
-  ];
+  useEffect(() => {
+    async function fetchSupporters() {
+      try {
+        const response = await fetch('https://team04.hackplay.eu/supporters');
+        if (!response.ok) throw new Error('Failed to fetch supporters');
+        const data = await response.json();
+        setSupporters(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
 
-  const communityChampions = [
-    { id: 'SJ', name: 'Sarah Johnson', level: 'Community Champion' },
-    { id: 'MC', name: 'Michael Chen', level: 'Community Champion' },
-    { id: 'ER', name: 'Emily Rodriguez', level: 'Community Champion' },
-    { id: 'DK', name: 'David Kim', level: 'Community Champion' },
-    { id: 'LA', name: 'Lisa Anderson', level: 'Community Champion' },
-    { id: 'JW', name: 'James Wilson', level: 'Community Champion' }
-  ];
+    fetchSupporters();
+  }, []);
+
+  if (loading) return <p>Loading supporters...</p>;
+
+  const goldSupporters = supporters.filter(s => s.rank === 'gold');
+  const silverSupporters = supporters.filter(s => s.rank === 'silver');
+  const communityChampions = supporters.filter(s => s.rank === 'community_champion');
 
   return (
     <div className="supporters-page">
@@ -48,9 +52,9 @@ const Supporters = () => {
           <div className="supporters-grid gold-grid">
             {goldSupporters.map(supporter => (
               <div key={supporter.id} className="supporter-card">
-                <div className="supporter-initials gold-initials">{supporter.id}</div>
+                <div className="supporter-initials gold-initials">{supporter.id || supporter.name[0]}</div>
                 <h4 className="supporter-name">{supporter.name}</h4>
-                <p className="supporter-level">{supporter.level}</p>
+                <p className="supporter-level">{supporter.rank === 'gold' ? 'Gold Supporter' : supporter.rank}</p>
               </div>
             ))}
           </div>
@@ -61,9 +65,9 @@ const Supporters = () => {
           <div className="supporters-grid silver-grid">
             {silverSupporters.map(supporter => (
               <div key={supporter.id} className="supporter-card">
-                <div className="supporter-initials silver-initials">{supporter.id}</div>
+                <div className="supporter-initials silver-initials">{supporter.id || supporter.name[0]}</div>
                 <h4 className="supporter-name">{supporter.name}</h4>
-                <p className="supporter-level">{supporter.level}</p>
+                <p className="supporter-level">{supporter.rank === 'silver' ? 'Silver Supporter' : supporter.rank}</p>
               </div>
             ))}
           </div>
@@ -74,9 +78,9 @@ const Supporters = () => {
           <div className="supporters-grid champions-grid">
             {communityChampions.map(supporter => (
               <div key={supporter.id} className="supporter-card">
-                <div className="supporter-initials champion-initials">{supporter.id}</div>
+                <div className="supporter-initials champion-initials">{supporter.id || supporter.name[0]}</div>
                 <h4 className="supporter-name">{supporter.name}</h4>
-                <p className="supporter-level">{supporter.level}</p>
+                <p className="supporter-level">Community Champion</p>
               </div>
             ))}
           </div>

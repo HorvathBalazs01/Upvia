@@ -18,11 +18,11 @@ function Footer(){
                     <div className="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="about-us">About Us</a></li>
-                        <li><a href="survey">Take the Quiz</a></li>
-                        <li><a href="privacy">Self-Motivation Guide</a></li>
-                        <li><a href="privacy">Mindset Exercise</a></li>
-                        <li><a href="privacy">Support Us</a></li>
+                        <li><a href="/about-us">About Us</a></li>
+                        <li><a href="/survey">Take the Quiz</a></li>
+                        <li><a href="/privacy">Self-Motivation Guide</a></li>
+                        <li><a href="/privacy">Mindset Exercise</a></li>
+                        <li><a href="/privacy">Support Us</a></li>
                     </ul>
                     </div>
 

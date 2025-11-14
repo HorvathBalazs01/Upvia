@@ -2,20 +2,14 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 import React, { useState, useEffect } from 'react';
-import questionsData from '../util/surveyQuestions.json'; // If in src folder
-import "../styles/pageStyles/survey.css"
+import "../styles/pageStyles/survey.css";
 
 function Survey() {
-  const [currentCategory, setCurrentCategory] = useState('positive_indicators');
+  const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
-
-  const categories = [
-    { key: 'positive_indicators', label: 'Motivation & Well-being' },
-    { key: 'depression_indicators', label: 'Depression Indicators' },
-    { key: 'anxiety_indicators', label: 'Anxiety Indicators' }
-  ];
+  const [loading, setLoading] = useState(true);
 
   const ratingOptions = [
     { value: 1, label: 'Never' },
@@ -25,106 +19,123 @@ function Survey() {
     { value: 5, label: 'Always' }
   ];
 
-  const currentQuestions = questionsData[currentCategory];
-  const currentQuestion = currentQuestions[currentQuestionIndex];
+  // 🔥 Fetch questions from FastAPI
+  useEffect(() => {
+    async function fetchQuestions() {
+      try {
+        const res = await fetch("https://team04.hackplay.eu/survey");
+        if (!res.ok) throw new Error("Failed to load survey questions");
+
+        const data = await res.json();
+        setQuestions(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchQuestions();
+  }, []);
+
+  if (loading) {
+    return <p style={{ textAlign: "center", fontSize: "1.5rem" }}>Loading survey...</p>;
+  }
+
+  const currentQuestion = questions[currentQuestionIndex];
 
   const handleAnswer = (rating) => {
-    const questionKey = `${currentCategory}_${currentQuestion.id}`;
+    const questionId = currentQuestion.id;
+
     setAnswers({
       ...answers,
-      [questionKey]: rating
+      [questionId]: rating
     });
 
-    if (currentQuestionIndex < currentQuestions.length - 1) {
+    if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      const currentCategoryIndex = categories.findIndex(c => c.key === currentCategory);
-      if (currentCategoryIndex < categories.length - 1) {
-        setCurrentCategory(categories[currentCategoryIndex + 1].key);
-        setCurrentQuestionIndex(0);
-      } else {
-        setShowResults(true);
-      }
+      setShowResults(true);
     }
   };
 
-  const calculateScore = (categoryKey) => {
-    const categoryAnswers = Object.entries(answers).filter(([key]) =>
-      key.startsWith(categoryKey)
-    );
+  const calculateScore = () => {
+    const values = Object.values(answers);
+    const total = values.reduce((sum, v) => sum + v, 0);
+    const avg = values.length ? (total / values.length).toFixed(2) : 0;
 
-    const total = categoryAnswers.reduce((sum, [, rating]) => sum + rating, 0);
-    const average = categoryAnswers.length > 0 ? total / categoryAnswers.length : 0;
-
-    return {
-      total,
-      average: average.toFixed(2),
-      count: categoryAnswers.length
-    };
+    return { total, avg };
   };
 
   if (showResults) {
+    const score = calculateScore();
+
     return (
       <div className="survey-container">
         <div className="resultsCard">
-          <h2 className="resultsTitle">Quiz Results</h2>
-          {categories.map(category => {
-            const score = calculateScore(category.key);
-            return (
-              <div key={category.key} className="categoryResult">
-                <h3 className="categoryTitle">{category.label}</h3>
-                <p className="resultText">Average Score: {score.average} / 5</p>
-                <p className="resultText">Questions Answered: {score.count} / {questionsData[category.key].length}</p>
-              </div>
-            );
-          })}
-          <button onClick={() => window.location.reload()} className="restartButton">
-            Restart Quiz
+          <h2 className="resultsTitle">Your Results</h2>
+
+          <p className="resultText">Average Score: {score.avg} / 5</p>
+          <p className="resultText">
+            Questions Answered: {Object.keys(answers).length} / {questions.length}
+          </p>
+
+          <button
+            onClick={() => window.location.reload()}
+            className="restartButton"
+          >
+            Restart Survey
           </button>
         </div>
       </div>
     );
   }
 
-  const totalQuestions = categories.reduce((sum, cat) => sum + questionsData[cat.key].length, 0);
-  const answeredQuestions = Object.keys(answers).length;
-  const overallProgress = (answeredQuestions / totalQuestions) * 100;
+  const overallProgress = ((Object.keys(answers).length) / questions.length) * 100;
 
   return (
     <div className="survey-container">
-        <div className="quiz-container">
-            <div className="quizCard">
-                <div className="header">
-                    <h2 className="categoryLabel">{categories.find(c => c.key === currentCategory)?.label}</h2>
-                    <p className="questionCounter">Question {currentQuestionIndex + 1} of {currentQuestions.length}</p>
-                </div>
 
-                <div className="questionContainer">
-                <h3 className="questionText">{currentQuestion.statement}</h3>
+      <div className="quiz-container">
+        <div className="quizCard">
 
-                <div className="buttonGrid">
-                    {ratingOptions.map(option => (
-                    <button 
-                        key={option.value}
-                        onClick={() => handleAnswer(option.value)}
-                        className="ratingButton"
-                    >
-                        {option.label}
-                    </button>
-                    ))}
-                </div>
-                </div>
+          <div className="header">
+            <h2 className="categoryLabel">Self-Motivation Survey</h2>
+            <p className="questionCounter">
+              Question {currentQuestionIndex + 1} of {questions.length}
+            </p>
+          </div>
 
-                <div className="progressBar">
-                <div
-                    className="progressFill"
-                    style={{ width: `${overallProgress}%` }}
-                />
-                </div>
-                
-                <p className="progressText">Overall Progress: {answeredQuestions} / {totalQuestions}</p>
+          <div className="questionContainer">
+            <h3 className="questionText">{currentQuestion.statement}</h3>
+
+            <div className="buttonGrid">
+              {ratingOptions.map(option => (
+                <button
+                  key={option.value}
+                  onClick={() => handleAnswer(option.value)}
+                  className="ratingButton"
+                >
+                  {option.label}
+                </button>
+              ))}
             </div>
+          </div>
+
+          <div className="progressBar">
+            <div
+              className="progressFill"
+              style={{ width: `${overallProgress}%` }}
+            />
+          </div>
+
+          <p className="progressText">
+            Overall Progress: {Object.keys(answers).length} / {questions.length}
+          </p>
+
         </div>
+      </div>
+
     </div>
   );
 }

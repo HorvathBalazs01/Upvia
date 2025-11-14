@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from api.database import get_db
-from api.models.survey_questions import SurveyQuestion
-from api.schemas.survey_question import SurveyQuestionCreate
+from database import get_db
+from models.survey_questions import SurveyQuestion
+from schemas.survey_question import SurveyQuestionCreate
 
 
 router = APIRouter()

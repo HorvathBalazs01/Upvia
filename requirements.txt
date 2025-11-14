@@ -3,4 +3,7 @@ uvicorn
 sqlalchemy
 python-dotenv
 pydantic
+pydantic[email]
+pydantic-settings
 alembic
+psycopg2
