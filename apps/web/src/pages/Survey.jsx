@@ -92,38 +92,6 @@ function Survey() {
 
   return (
     <div className="survey-container">
-
-        <div className="intro-container">
-            <div className="intro-text-container">
-                <h2 style={{textAlign: "center"}}>Lets see how motivated you are!</h2>
-
-                <p>Self-motivation is a key part of personal well-being and achievement. 
-                This test is designed to help you reflect on your recent thoughts, feelings, 
-                and behaviors related to motivation, sadness, and anxiety.
-                By considering each question thoughtfully,
-                you'll gain a clearer picture of your emotional patterns and motivational strengths. 
-                Your honest responses will provide useful insights for understanding yourself 
-                and finding ways to thrive, even during challenging times.</p>
-
-                <br/>
-
-                <p>
-                    Taking this test is not about judgment, but about self-awareness. 
-                    The questions invite you to notice patterns in your mood, energy, and habits 
-                    over recent days, highlighting areas where you might feel strong or 
-                    where you might want support. By reflecting on your responses, you are taking 
-                    a positive step toward better understanding yourself and supporting your own growth.
-                </p>
-
-                <br/>
-                <p style={{textAlign: "center"}}>
-                    Scroll down to start the test!
-                </p>
-
-            </div>
-        </div>
-    
-
         <div className="quiz-container">
             <div className="quizCard">
                 <div className="header">

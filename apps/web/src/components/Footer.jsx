@@ -1,5 +1,6 @@
 import "../styles/componentStyles/footer.css"
 import React from "react";
+import {Instagram, Facebook, Tiktok} from "react-bootstrap-icons"
 
 function Footer(){
     return(
@@ -28,9 +29,9 @@ function Footer(){
                     <div className="footer-section">
                     <h4>Follow Us</h4>
                     <div className="footer-socials">
-                        <a href="https://twitter.com" target="_blank" rel="noreferrer">🐦</a>
-                        <a href="https://facebook.com" target="_blank" rel="noreferrer">📘</a>
-                        <a href="https://instagram.com" target="_blank" rel="noreferrer">📸</a>
+                        <a href="https://instagram.com" target="_blank"><Instagram size={18} /></a>
+                        <a href="https://facebook.com" target="_blank"><Facebook size={18} /></a>
+                        <a href="https://tiktok.com" target="_blank"><Tiktok size={18} /></a>
                     </div>
                     </div>
                 </div>

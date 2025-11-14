@@ -10,6 +10,7 @@ import Profile from './pages/Profile.jsx';
 import SelfMotivation from './pages/SelfMotivation.jsx';
 import Survey from './pages/Survey.jsx';
 import Supporters from './pages/Supporters.jsx';
+import Donations from './pages/Donations.jsx';
 
 
 function App() {
@@ -20,13 +21,12 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about-us' element={<AboutUs/>}/>
-          <Route path='/profile' element={<Profile/>}/>
           <Route path='/self-motivation' element={<SelfMotivation/>}/>
           <Route path='/survey' element={<Survey/>}/>
           <Route path='/supporters' element={<Supporters/>}/>
+          <Route path='donations' element={<Donations/>}/>
         </Routes>
       </main>
-
       <Footer/>
     </>
   );
