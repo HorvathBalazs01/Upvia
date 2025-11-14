@@ -88,7 +88,7 @@ function SelfMotivation(){
                         <h2>Ready to Begin Your Journey?</h2>
                         <p>Take our quiz to understand where you are on your autonomy path and get personalized recommendations.</p>
                         <br />
-                        <a href="/survey"><button>Start the Quiz</button></a>
+                        <a href="survey"><button>Start the Quiz</button></a>
                     </div>
                 </div>
             </div>
