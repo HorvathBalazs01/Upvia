@@ -1,0 +1,53 @@
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffaf0;
+    padding: 60px;
+}
+
+.about-container h1, h2, h3, h4, h5{
+    color: #1f2933;
+}
+
+.about-container p{
+    color: #595959;
+}
+
+.our-story-container{
+    padding: 60px;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+.our-story-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.our-mission-container{
+    text-align: center;
+}
+
+.our-core-values{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.our-core-values-cards{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.our-core-values-card{
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: .5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}

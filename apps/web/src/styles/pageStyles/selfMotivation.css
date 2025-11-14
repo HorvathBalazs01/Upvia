@@ -1,0 +1,87 @@
+.self-motivation{
+    background-color: #fffaf0;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.self-motivation h1, h2, h3, h4, h5{
+    color: #1f2933;
+}
+
+.self-motivation p{
+    color: #595959;
+}
+
+.intro-container{
+    height: 100vh;
+    background-image: url("/main-page-man-running.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.description{
+    width: 80%;
+    padding: 40px;
+    margin: 40px;
+    border: 1px solid #e6e6e6;
+    background-color: #ffffff;
+    border-radius: .5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.core-principles{
+    width: 80%;
+    padding: 40px;
+    margin: 40px;
+}
+
+.core-principles-cards{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.core-principles-card{
+    border: 1px solid #e6e6e6;
+    border-radius: .5rem;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.path{
+    border: 1px solid #e6e6e6;
+    border-radius: .5rem;
+    background-color: #ffffff;
+    width: 80%;
+    padding: 40px;
+    margin: 40px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.begin-journey{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.begin-journey-content{
+    width: 90%;
+    text-align: center;
+    color: #ffffff;
+    border: 1px solid #8ca6d9;
+    border-radius: .5rem;
+    background-color: #8ca6d9;
+    padding: 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}

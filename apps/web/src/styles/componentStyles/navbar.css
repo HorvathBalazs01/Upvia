@@ -1,74 +1,106 @@
-.navbar{
-    position: fixed;
-    margin: 0;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: aliceblue;
-    width: 100%;
-    height: 67px;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 67px;
+  /*background-color: rgb(63, 176, 189);*/
+  background-color: #e6e6e6;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.container {
+.navbar-container {
   width: 100%;
-  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
-  background-color: #f3f9ff;
   box-sizing: border-box;
 }
 
-.leftContainer {
+.navbar-left {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 32px;
-  color: black;
-  flex: 1; /* take up available space */
 }
 
-.left-nav-logo {
+.navbar-logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0; /* logo doesn't shrink */
-}
-
-.left-nav-logo img{
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.left-nav-object {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
-}
-
-.left-nav-object a {
+  gap: 8px;
   text-decoration: none;
-  padding: 2px 4px;
-}
-
-.rightContainer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 32px;
   color: black;
-  flex: 1; /* take up available space */
-  flex-shrink: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
-.right-nav-social{
-  display: flex;
-  gap: 16px
-}
-
-.right-nav-profile img{
+.navbar-logo img {
   width: 2.5rem;
   height: 2.5rem;
 }
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: rgb(69, 69, 69);
+  font-weight: 500;
+  transition: color 0.5s;
+}
+
+.navbar-links a:hover {
+  color: black;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-socials {
+  display: flex;
+  gap: 14px;
+}
+
+.navbar-socials a {
+  color: rgb(69, 69, 69);
+  transition: color 0.5s;
+}
+
+.navbar-socials a:hover {
+  color: black;
+}
+
+.navbar-profile img {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none; /* hide links on smaller screens (optional) */
+  }
+
+  .navbar-container {
+    padding: 0 16px;
+  }
+
+  .navbar-left {
+    gap: 16px;
+  }
+}
+

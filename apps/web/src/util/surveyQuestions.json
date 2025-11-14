@@ -1,0 +1,188 @@
+{
+  "positive_indicators": [
+    {
+      "id": 1,
+      "statement": "I felt excited about starting my day."
+    },
+    {
+      "id": 2,
+      "statement": "I found it easy to focus on tasks I care about."
+    },
+    {
+      "id": 3,
+      "statement": "I put off things I wanted or needed to do."
+    },
+    {
+      "id": 4,
+      "statement": "I felt proud of completing small goals."
+    },
+    {
+      "id": 5,
+      "statement": "I had clear reasons for what I was doing."
+    },
+    {
+      "id": 6,
+      "statement": "I felt stuck or unmotivated."
+    },
+    {
+      "id": 7,
+      "statement": "I enjoyed learning or trying new things."
+    },
+    {
+      "id": 8,
+      "statement": "I kept going even when tasks were difficult."
+    },
+    {
+      "id": 9,
+      "statement": "I needed others to push me to take action."
+    },
+    {
+      "id": 10,
+      "statement": "I felt inspired by something or someone."
+    },
+    {
+      "id": 11,
+      "statement": "I struggled to start tasks even when I had time."
+    },
+    {
+      "id": 12,
+      "statement": "I followed through on what I planned."
+    },
+    {
+      "id": 13,
+      "statement": "I felt a sense of purpose or direction."
+    },
+    {
+      "id": 14,
+      "statement": "I avoided things that felt challenging."
+    },
+    {
+      "id": 15,
+      "statement": "I celebrated small wins or progress."
+    }
+  ],
+  "depression_indicators": [
+    {
+      "id": 1,
+      "statement": "I felt down, sad, or hopeless."
+    },
+    {
+      "id": 2,
+      "statement": "I had little interest or pleasure in doing things."
+    },
+    {
+      "id": 3,
+      "statement": "I felt tired or had little energy."
+    },
+    {
+      "id": 4,
+      "statement": "My sleep was poor (too much or too little)."
+    },
+    {
+      "id": 5,
+      "statement": "I found it hard to concentrate on things."
+    },
+    {
+      "id": 6,
+      "statement": "I felt worthless or guilty."
+    },
+    {
+      "id": 7,
+      "statement": "My appetite changed noticeably."
+    },
+    {
+      "id": 8,
+      "statement": "I felt emotionally numb or disconnected."
+    },
+    {
+      "id": 9,
+      "statement": "I avoided social contact or withdrew from others."
+    },
+    {
+      "id": 10,
+      "statement": "I felt that life had little meaning."
+    },
+    {
+      "id": 11,
+      "statement": "I struggled to make simple decisions."
+    },
+    {
+      "id": 12,
+      "statement": "I felt restless or slowed down physically."
+    },
+    {
+      "id": 13,
+      "statement": "I noticed negative thoughts repeating in my mind."
+    },
+    {
+      "id": 14,
+      "statement": "I found it hard to feel joy even in positive moments."
+    },
+    {
+      "id": 15,
+      "statement": "I felt that small tasks took a lot of effort."
+    }
+  ],
+  "anxiety_indicators": [
+    {
+      "id": 1,
+      "statement": "I felt tense, nervous, or on edge."
+    },
+    {
+      "id": 2,
+      "statement": "I worried about many different things."
+    },
+    {
+      "id": 3,
+      "statement": "I found it hard to relax."
+    },
+    {
+      "id": 4,
+      "statement": "I felt a sense of dread or fear without clear reason."
+    },
+    {
+      "id": 5,
+      "statement": "I noticed my heart racing or breathing faster."
+    },
+    {
+      "id": 6,
+      "statement": "I felt easily startled or jumpy."
+    },
+    {
+      "id": 7,
+      "statement": "I struggled to stop or control worrying."
+    },
+    {
+      "id": 8,
+      "statement": "I avoided situations that made me nervous."
+    },
+    {
+      "id": 9,
+      "statement": "I felt irritable or impatient."
+    },
+    {
+      "id": 10,
+      "statement": "I had trouble sleeping because of racing thoughts."
+    },
+    {
+      "id": 11,
+      "statement": "I feared something bad might happen."
+    },
+    {
+      "id": 12,
+      "statement": "I replayed stressful situations in my mind."
+    },
+    {
+      "id": 13,
+      "statement": "I felt dizzy, sweaty, or shaky during stress."
+    },
+    {
+      "id": 14,
+      "statement": "I needed reassurance from others often."
+    },
+    {
+      "id": 15,
+      "statement": "I felt anxious even in safe or calm settings."
+    }
+  ]
+}

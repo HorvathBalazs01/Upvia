@@ -1,27 +1,142 @@
 .hero {
   height: 100vh; /* full viewport height */
-  background-image: url('https://thejournalofmhealth.com/wp-content/uploads/2022/11/Prioritising-Mental-Health-and-Wellbeing-for-All_AdobeStock-777x437.jpeg');
+  background-image: url('/main-page-man-running.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white; /* or depending on your image */
   text-align: center;
   padding: 0 20px;
-  width: 100vw;
 }
 
 .hero-content {
   max-width: 600px;
-  background-color: rgba(0, 0, 0, 0.4); /* optional: dark overlay for readability */
+}
+
+.hero-buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
   padding: 20px;
-  border-radius: 12px;
 }
 
 .content {
-  padding: 40px 20px;
-  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px;
   margin: auto;
+  background-color: #fffaf0;
+}
+
+.content h1, h2, h3, h4{
+  color: #1f2933;
+}
+
+.content p{
+  color: #595959;
+}
+
+.content-cards{
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: .5rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card:hover{
+  background-color: #f0f0f0;
+}
+
+.take-quiz{
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.take-quiz h2{
+  color: #1f2933;
+}
+
+.take-quiz p{
+  color: #595959;
+}
+
+.take-quiz-container{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 70%;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: .5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.take-quiz-content{ 
+  padding: 40px;
+  max-width: 80%;
+}
+
+
+.community{
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffaf0;
+}
+
+.community h2, h5{
+  color: #1f2933;
+}
+
+.community p{
+  color: #595959;
+}
+
+.community-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.community-cards{
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.community-card{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: .5rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
